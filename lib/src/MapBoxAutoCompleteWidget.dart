@@ -67,6 +67,8 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
       // final json = jsonDecode(response.body);
       final predictions = Predections.fromRawJson(response.body);
 
+      print(predictions);
+      
       setState(() {
         _placePredictions = null;
         _placePredictions = predictions;
@@ -79,7 +81,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
     widget.onSelect(prediction);
     if (widget.closeOnSelect) Navigator.pop(context);
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
