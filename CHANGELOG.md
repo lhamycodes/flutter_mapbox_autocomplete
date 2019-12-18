@@ -10,3 +10,6 @@ Feature:
 ## [1.0.1] - 18th December, 2019.
 - Update Documentation
 - Moved package from pre-release
+
+## [1.0.2] - 18th December, 2019.
+- Improved Stability
