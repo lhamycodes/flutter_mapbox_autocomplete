@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
@@ -46,6 +47,7 @@ class _HomeState extends State<Home> {
                     _startPointController.text = place.placeName;
                   },
                   limit: 10,
+                  country: "NG",
                 ),
               ),
             );

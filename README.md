@@ -72,8 +72,14 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
 ```
+
+## Screenshots
+<p>
+    <img src="https://raw.githubusercontent.com/lhamycodes/flutter_mapbox_autocomplete/master/screenshots/1.png" width="200px" height="auto" hspace="20"/>
+    <img src="https://raw.githubusercontent.com/lhamycodes/flutter_mapbox_autocomplete/master/screenshots/2.png" width="200px" height="auto" hspace="20"/>
+    <img src="https://raw.githubusercontent.com/lhamycodes/flutter_mapbox_autocomplete/master/screenshots/3.png" width="200px" height="auto" hspace="20"/>
+</p>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
