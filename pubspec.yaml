@@ -1,0 +1,20 @@
+name: flutter_mapbox_autocomplete
+description: A Flutter Package for MapBox Places autocomplete
+version: 0.0.1
+author: Adedeji Rotibi <dayjeerow7@gmail.com>
+homepage: https://github.com/lhamycodes/flutter_mapbox_autocomplete
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
