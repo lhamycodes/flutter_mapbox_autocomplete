@@ -1,6 +1,6 @@
 name: flutter_mapbox_autocomplete
-description: A Flutter Package for MapBox Places autocomplete
-version: 0.0.2
+description: A Flutter Package for MapBox Places autocomplete which allows you use the MapBox API's to get autocomplete text of places
+version: 1.0.1
 homepage: https://github.com/lhamycodes/flutter_mapbox_autocomplete
 
 environment:
