@@ -23,6 +23,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final _startPointController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +31,10 @@ class _HomeState extends State<Home> {
         title: Text("Flutter MapBox AutoComplete example"),
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: CustomTextField(
           hintText: "Select starting point",
+          textController: _startPointController,
           onTap: () {
             Navigator.push(
               context,
@@ -39,7 +42,9 @@ class _HomeState extends State<Home> {
                 builder: (context) => MapBoxAutoCompleteWidget(
                   apiKey: Tokens.MAPBOX_ACCESS_TOKEN,
                   hint: "Select starting point",
-                  onSelect: (place) {},
+                  onSelect: (place) {
+                    _startPointController.text = place.placeName;
+                  },
                   limit: 10,
                 ),
               ),

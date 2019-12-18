@@ -8,7 +8,7 @@ class MapBoxAutoCompleteWidget extends StatefulWidget {
   final String hint;
 
   /// Callback on Select of autocomplete result
-  final Function onSelect;
+  final void Function(MapBoxPlace place) onSelect;
 
   /// if true will dismiss autocomplete widget once a result has been selected
   final bool closeOnSelect;
@@ -37,7 +37,7 @@ class MapBoxAutoCompleteWidget extends StatefulWidget {
     this.hint,
     this.onSelect,
     this.closeOnSelect = true,
-    this.language,
+    this.language = "en",
     this.location,
     this.limit,
     this.country,
@@ -64,15 +64,17 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
         url += "&country=${widget.country}";
       }
       final response = await http.get(url);
-      // final json = jsonDecode(response.body);
+      // print(response.body);
+      // // final json = jsonDecode(response.body);
       final predictions = Predections.fromRawJson(response.body);
 
-      print(predictions);
-      
+      _placePredictions = null;
+
       setState(() {
-        _placePredictions = null;
         _placePredictions = predictions;
       });
+    } else {
+      setState(() => _placePredictions = Predections.empty());
     }
   }
 
@@ -90,6 +92,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
           hintText: widget.hint,
           textController: _searchFieldTextController,
           onChanged: (input) => _getPlaces(input),
+          // onChanged: (input) => print(input),
         ),
         actions: <Widget>[
           IconButton(
