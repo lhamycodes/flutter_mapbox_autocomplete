@@ -8,7 +8,7 @@ Use the package manager [pub.dev](https://pub.dev/) to install **flutter_mapbox_
 
 ```bash
 dependencies:
-  android_intent: ^0.3.4+8
+  flutter_mapbox_autocomplete: ^1.0.2
 
 and run flutter pub get
 ```

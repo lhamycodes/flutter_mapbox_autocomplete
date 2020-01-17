@@ -1,4 +1,4 @@
-# example
+# flutter_mapbox_autocomplete_example
 
 A new Flutter project.
 
