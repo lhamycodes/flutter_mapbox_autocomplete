@@ -50,6 +50,7 @@ class MapBoxAutoCompleteWidget extends StatefulWidget {
 
 class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
   final _searchFieldTextController = TextEditingController();
+  final _searchFieldTextFocus = FocusNode();
 
   Predections _placePredictions = Predections.empty();
 
@@ -92,6 +93,8 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
           hintText: widget.hint,
           textController: _searchFieldTextController,
           onChanged: (input) => _getPlaces(input),
+          focusNode: _searchFieldTextFocus,
+          onFieldSubmitted: (value) => _searchFieldTextFocus.unfocus(),
           // onChanged: (input) => print(input),
         ),
         actions: <Widget>[
