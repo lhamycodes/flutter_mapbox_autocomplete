@@ -16,3 +16,6 @@ Feature:
 
 ## [1.0.3] - 17th January, 2020.
 - Improved Documentation
+
+## [1.0.4] - 26th January, 2020.
+- Improved Stability
