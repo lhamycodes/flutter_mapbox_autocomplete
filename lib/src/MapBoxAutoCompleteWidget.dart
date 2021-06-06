@@ -64,7 +64,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
       if (widget.country != null) {
         url += "&country=${widget.country}";
       }
-      final response = await http.get(url);
+      final response = await http.get(Uri.parse(url));
       // print(response.body);
       // // final json = jsonDecode(response.body);
       final predictions = Predections.fromRawJson(response.body);
