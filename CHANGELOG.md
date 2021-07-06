@@ -19,3 +19,7 @@ Feature:
 
 ## [1.0.4] - 26th January, 2020.
 - Improved Stability
+
+## [2.0.0] - 6th July, 2021.
+
+- Migrate Package to support null-safety

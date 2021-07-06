@@ -1,9 +1,9 @@
 part of flutter_mapbox_autocomplete;
 
 class Predections {
-  String type;
-  List<dynamic> query;
-  List<MapBoxPlace> features;
+  String? type;
+  List<dynamic>? query;
+  List<MapBoxPlace>? features;
 
   Predections.prediction({
     this.type,
@@ -33,27 +33,27 @@ class Predections {
 
   Map<String, dynamic> toJson() => {
         "type": type,
-        "query": List<dynamic>.from(query.map((x) => x)),
+        "query": List<dynamic>.from(query!.map((x) => x)),
         "features": List<dynamic>.from(
-          features.map((x) => x.toJson()),
+          features!.map((x) => x.toJson()),
         ),
       };
 }
 
 class MapBoxPlace {
-  String id;
-  FeatureType type;
-  List<PlaceType> placeType;
+  String? id;
+  FeatureType? type;
+  List<PlaceType>? placeType;
   // dynamic relevance;
-  Properties properties;
-  String text;
-  String placeName;
-  List<double> bbox;
-  List<double> center;
-  Geometry geometry;
-  List<Context> context;
-  String matchingText;
-  String matchingPlaceName;
+  Properties? properties;
+  String? text;
+  String? placeName;
+  List<double>? bbox;
+  List<double>? center;
+  Geometry? geometry;
+  List<Context>? context;
+  String? matchingText;
+  String? matchingPlaceName;
 
   MapBoxPlace({
     this.id,
@@ -111,19 +111,19 @@ class MapBoxPlace {
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "type": featureTypeValues.reverse[type],
+        "type": featureTypeValues.reverse![type!],
         "place_type": List<dynamic>.from(
-            placeType.map((x) => placeTypeValues.reverse[x])),
+            placeType!.map((x) => placeTypeValues.reverse![x])),
         // "relevance": relevance,
-        "properties": properties.toJson(),
+        "properties": properties!.toJson(),
         "text": text,
         "place_name": placeName,
-        "bbox": List<dynamic>.from(bbox.map((x) => x)),
-        "center": List<dynamic>.from(center.map((x) => x)),
-        "geometry": geometry.toJson(),
+        "bbox": List<dynamic>.from(bbox!.map((x) => x)),
+        "center": List<dynamic>.from(center!.map((x) => x)),
+        "geometry": geometry!.toJson(),
         "context": context == null
             ? null
-            : List<dynamic>.from(context.map((x) => x.toJson())),
+            : List<dynamic>.from(context!.map((x) => x.toJson())),
         "matching_text": matchingText == null ? null : matchingText,
         "matching_place_name":
             matchingPlaceName == null ? null : matchingPlaceName,
@@ -131,10 +131,10 @@ class MapBoxPlace {
 }
 
 class Context {
-  String id;
-  String shortCode;
-  String wikidata;
-  String text;
+  String? id;
+  String? shortCode;
+  String? wikidata;
+  String? text;
 
   Context({
     this.id,
@@ -163,8 +163,8 @@ class Context {
 }
 
 class Geometry {
-  GeometryType type;
-  List<double> coordinates;
+  GeometryType? type;
+  List<double>? coordinates;
 
   Geometry({
     this.type,
@@ -183,8 +183,8 @@ class Geometry {
       );
 
   Map<String, dynamic> toJson() => {
-        "type": geometryTypeValues.reverse[type],
-        "coordinates": List<dynamic>.from(coordinates.map((x) => x)),
+        "type": geometryTypeValues.reverse![type!],
+        "coordinates": List<dynamic>.from(coordinates!.map((x) => x)),
       };
 }
 
@@ -201,8 +201,8 @@ final placeTypeValues = EnumValues({
 });
 
 class Properties {
-  String shortCode;
-  String wikidata;
+  String? shortCode;
+  String? wikidata;
 
   Properties({
     this.shortCode,
@@ -231,11 +231,11 @@ final featureTypeValues = EnumValues({"Feature": FeatureType.FEATURE});
 
 class EnumValues<T> {
   Map<String, T> map;
-  Map<T, String> reverseMap;
+  Map<T, String>? reverseMap;
 
   EnumValues(this.map);
 
-  Map<T, String> get reverse {
+  Map<T, String>? get reverse {
     if (reverseMap == null) {
       reverseMap = map.map((k, v) => MapEntry(v, k));
     }

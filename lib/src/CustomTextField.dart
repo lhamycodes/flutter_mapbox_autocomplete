@@ -1,27 +1,27 @@
 part of flutter_mapbox_autocomplete;
 
 class CustomTextField extends StatelessWidget {
-  final Widget prefixIcon;
-  final Widget suffixIcon;
-  final String initialValue;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
+  final String? initialValue;
   final TextInputType inputType;
-  final TextEditingController textController;
-  final String hintText;
+  final TextEditingController? textController;
+  final String? hintText;
   final bool obscureText;
   final bool enabled;
   final bool readOnly;
-  final int maxLines;
+  final int? maxLines;
   final TextInputAction keyboardAction;
-  final FocusNode focusNode;
-  final Function validator;
-  final Function onSaved;
-  final Function onTap;
-  final Function onChanged;
-  final Function onFieldSubmitted;
-  final Function onEditComplete;
+  final FocusNode? focusNode;
+  final Function? validator;
+  final Function? onSaved;
+  final Function? onTap;
+  final Function? onChanged;
+  final Function? onFieldSubmitted;
+  final Function? onEditComplete;
 
   CustomTextField({
-    @required this.hintText,
+    required this.hintText,
     this.initialValue,
     this.textController,
     this.inputType = TextInputType.text,
@@ -73,14 +73,14 @@ class CustomTextField extends StatelessWidget {
       readOnly: readOnly,
       keyboardType: inputType,
       textInputAction: keyboardAction,
-      validator: validator,
-      onSaved: onSaved,
+      validator: validator as String? Function(String?)?,
+      onSaved: onSaved as void Function(String?)?,
       focusNode: focusNode,
-      onTap: onTap,
-      onChanged: onChanged,
-      onFieldSubmitted: onFieldSubmitted,
+      onTap: onTap as void Function()?,
+      onChanged: onChanged as void Function(String)?,
+      onFieldSubmitted: onFieldSubmitted as void Function(String)?,
       controller: textController,
-      onEditingComplete: onEditComplete,
+      onEditingComplete: onEditComplete as void Function()?,
       maxLines: obscureText ? 1 : maxLines,
     );
   }
